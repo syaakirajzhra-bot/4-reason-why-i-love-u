@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>4 Reason Why I Love You</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: linear-gradient(180deg, #fbd3e9, #fbeee6);
+      color: #333;
+    }
+
+    /* COVER TANPA FOTO */
+    .cover {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: linear-gradient(
+        135deg,
+        #f8cdda,
+        #fbd3e9,
+        #fbeee6
+      );
+      padding: 20px;
+    }
+
+    .cover-box {
+      background: rgba(255, 255, 255, 0.65);
+      padding: 35px 40px;
+      border-radius: 22px;
+      backdrop-filter: blur(6px);
+    }
+
+    .cover-box h1 {
+      font-size: 34px;
+      font-weight: 600;
+    }
+
+    .cover-box p {
+      font-size: 18px;
+      margin-top: 8px;
+      opacity: 0.85;
+    }
+
+    /* MUSIC BUTTON */
+    .music-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: rgba(255, 255, 255, 0.85);
+      border-radius: 50%;
+      width: 56px;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      cursor: pointer;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+      z-index: 999;
+      transition: transform 0.3s ease;
+    }
+
+    .music-btn:hover {
+      transform: scale(1.1);
+    }
+
+    /* SECTION */
+    section {
+      padding: 55px 25px;
+      max-width: 720px;
+      margin: auto;
+    }
+
+    .opening p {
+      text-align: center;
+      font-size: 16px;
+      line-height: 1.9;
+    }
+
+    .reason h2 {
+      font-size: 20px;
+      margin-bottom: 15px;
+      color: #b85c8a;
+    }
+
+    .reason p {
+      font-size: 15px;
+      line-height: 1.9;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 35px 20px;
+      font-size: 14px;
+      opacity: 0.85;
+    }
+
+    footer span {
+      font-weight: 600;
+    }
+
+    /* ANIMATION */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(25px);
+      transition: all 0.9s ease;
+    }
+
+    .fade-in.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- AUDIO -->
+  <audio id="music" loop>
+    <source src="pink-skies.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- MUSIC BUTTON -->
+  <div class="music-btn" id="musicBtn">▶️</div>
+
+  <!-- COVER -->
+  <section class="cover">
+    <div class="cover-box fade-in show">
+      <h1>4 Reasons</h1>
+      <p>Why I Love You</p>
+    </div>
+  </section>
+
+  <!-- OPENING -->
+  <section class="opening fade-in">
+    <p>
+      This page is a quiet place where my feelings finally find their words.
+      Not everything is easy to say out loud, but here, I can explain slowly,
+      gently, and honestly why you mean so much to me.
+    </p>
+  </section>
+
+  <!-- REASON 1 -->
+  <section class="reason fade-in">
+    <h2>01. You Feel Like Home</h2>
+    <p>
+      Being with you feels like coming home after a long and exhausting day.
+      There is comfort in your presence that I can’t explain logically.
+      You make even the simplest moments feel warm and safe.
+      Around you, I don’t have to pretend to be someone else.
+      I can be quiet, loud, messy, or emotional, and it still feels okay.
+    </p>
+  </section>
+
+  <!-- REASON 2 -->
+  <section class="reason fade-in">
+    <h2>02. You Listen, Truly</h2>
+    <p>
+      You don’t just hear my words, you listen to the meaning behind them.
+      Even when I can’t explain things properly, you try to understand.
+      Your patience makes me feel valued.
+      You remind me that my thoughts, fears, and dreams matter.
+      That kind of attention is rare, and I treasure it deeply.
+    </p>
+  </section>
+
+  <!-- REASON 3 -->
+  <section class="reason fade-in">
+    <h2>03. You Make Me Grow</h2>
+    <p>
+      Loving you doesn’t make me feel smaller.
+      It pushes me to become better, braver, and more honest with myself.
+      You inspire me to grow without pressure.
+      With you, improvement feels natural, not forced.
+      You make me believe that becoming better can be done with love, not fear.
+    </p>
+  </section>
+
+  <!-- REASON 4 -->
+  <section class="reason fade-in">
+    <h2>04. You Exist, And That’s Enough</h2>
+    <p>
+      Sometimes there’s no complicated reason.
+      I love you simply because you are you.
+      Your smile, your flaws, your kindness, your silence.
+      You don’t need to be perfect to be loved.
+      Your existence alone already makes my world feel more meaningful.
+    </p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>Created with love by <span>Syaakira 11 12</span></p>
+  </footer>
+
+  <script>
+    /* ANIMATION */
+    const elements = document.querySelectorAll('.fade-in');
+    window.addEventListener('scroll', () => {
+      elements.forEach(el => {
+        const position = el.getBoundingClientRect().top;
+        const screenHeight = window.innerHeight;
+        if (position < screenHeight - 100) {
+          el.classList.add('show');
+        }
+      });
+    });
+
+    /* MUSIC CONTROL */
+    const music = document.getElementById('music');
+    const btn = document.getElementById('musicBtn');
+    let isPlaying = false;
+
+    btn.addEventListener('click', () => {
+      if (!isPlaying) {
+        music.play();
+        btn.textContent = '⏸️';
+      } else {
+        music.pause();
+        btn.textContent = '▶️';
+      }
+      isPlaying = !isPlaying;
+    });
+  </script>
+
+</body>
+</html>
